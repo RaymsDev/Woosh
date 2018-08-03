@@ -11,7 +11,7 @@ services:
   db:
     build:
       context: .\${DB_PROJECT}
-      dockerfile: Dockerfile
+      dockerfile: .\Dockerfile
     ports:
       - 1433:1433
     environment:
@@ -21,7 +21,7 @@ services:
   builder:
     build:
       context: .\${DB_PROJECT}
-      dockerfile: Dockerfile.builder
+      dockerfile: .\Dockerfile.builder
     links:
       - db
     environment:
