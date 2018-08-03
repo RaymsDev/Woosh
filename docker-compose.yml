@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  woosh:
+    image: ${DOCKER_REGISTRY}woosh
+    build:
+      context: .
+      dockerfile: Woosh\Dockerfile
+    links:
+      - db
+  db:
+    build:
+      context: .\${DB_PROJECT}
+      dockerfile: Dockerfile
+    ports:
+      - 1433:1433
+    environment:
+      "ACCEPT_EULA": "Y"
+      "SA_PASSWORD": "${SA_PASSWORD}"
+      "DB_NAME": "${DB_NAME}"
+  builder:
+    build:
+      context: .\${DB_PROJECT}
+      dockerfile: Dockerfile.builder
+    links:
+      - db
+    environment:
+      "PORT": "${PORT}"
+      "DB_HOST": "${DB_HOST}"
+      "SA_PASSWORD": "${SA_PASSWORD}"
+      "DB_NAME": "${DB_NAME}"
+    depends_on:
+      - db

@@ -71,5 +71,6 @@
     <None Include="Unpack-Database.ps1" />
     <None Include="Dockerfile.builder" />
     <None Include="docker-compose.yml" />
+    <None Include=".env" />
   </ItemGroup>
 </Project>
