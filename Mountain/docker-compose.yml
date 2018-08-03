@@ -3,13 +3,11 @@ services:
   db:
     build: .
     ports:
-      - 1433:1433
+      - ${PORT}:1433
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=P@ssw0rd
-      - DB_NAME=Mountain
-    networks:
-      - deploy
+      - SA_PASSWORD=${SA_PASSWORD}
+      - DB_NAME=${DB_NAME}
   builder:
     build: 
       context: .
@@ -17,13 +15,9 @@ services:
     links:
       - db
     environment:
-      - PORT=1433
-      - DB_HOST=db
-      - SA_PASSWORD=P@ssw0rd
-      - DB_NAME=Mountain
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - SA_PASSWORD=${SA_PASSWORD}
+      - DB_NAME=${DB_NAME}
     depends_on:
       - db
-    networks:
-      - deploy
-networks:
-  deploy:
