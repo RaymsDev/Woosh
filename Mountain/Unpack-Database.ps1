@@ -1,16 +1,15 @@
 param(
     [Parameter(Mandatory=$false)]
-    [string]$sqlpackage,
+    [string]$sqlpackage_path,
+    [string]$dacpac_path,
     [string]$hostname,
+	[string]$port,
     [string]$sa_password,
-	[string]$db_name,
-	[string]$script_name)
+	[string]$db_name)
 
 # start the service
-Write-Verbose 'Starting Unpack'
+Write-Verbose 'Starting Deploy'
 # deploy or upgrade the database:
-C:\SqlPackage.CommandLine.14.0.3953.4\tools\SqlPackage.exe /Action:Publish /SourceFile:"C:\src\bin\Debug\Mountain.dacpac" /TargetConnectionString:"Data Source=db,1433;Initial Catalog=Mountain;Persist Security Info=True;User ID=sa;Password=P@ssw0rd"
-#$SqlCmdVars = "DatabaseName=$db_name", "DefaultFilePrefix=$db_name", "DefaultDataPath=c:\database\", "DefaultLogPath=c:\database\"  
-#Invoke-Sqlcmd -InputFile $script_name -Variable $SqlCmdVars -Verbose
+Invoke-Expression "$sqlpackage_path\SqlPackage.exe /Action:Publish /SourceFile:$dacpac_path\$db_name.dacpac /TargetConnectionString:'Data Source=$hostname,$port;Initial Catalog=$db_name;Persist Security Info=True;User ID=sa;Password=$sa_password'"
 
-Write-Output "Coucou"
+Write-Verbose 'Deploy Success'

@@ -29,7 +29,6 @@ if ((Test-Path $mdfPath) -eq $true) {
     Write-Verbose "Invoke-Sqlcmd -Query $($sqlcmd) -ServerInstance '.\SQLEXPRESS'"
     Invoke-Sqlcmd -Query $sqlcmd -ServerInstance ".\SQLEXPRESS"
 }
-
 # deploy or upgrade the database:
 $SqlPackagePath = 'SqlPackage.exe'
 & $SqlPackagePath  `

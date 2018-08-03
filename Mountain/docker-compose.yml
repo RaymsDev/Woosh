@@ -4,6 +4,10 @@ services:
     build: .
     ports:
       - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=P@ssw0rd
+      - DB_NAME=Mountain
     networks:
       - deploy
   builder:
@@ -11,9 +15,12 @@ services:
       context: .
       dockerfile: Dockerfile.builder
     links:
-        - db
+      - db
     environment:
-        DB_HOST: db
+      - PORT=1433
+      - DB_HOST=db
+      - SA_PASSWORD=P@ssw0rd
+      - DB_NAME=Mountain
     depends_on:
       - db
     networks:

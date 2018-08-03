@@ -20,14 +20,11 @@ RUN $env:PATH = $env:SQLPACKAGE_PATH + ';' + $env:DATATOOLS_PATH + ';' + $env:MS
 WORKDIR C:\src
 COPY . .
 
-ENV db_name="Mountain"
-
-RUN msbuild $db_name.sqlproj `
+RUN msbuild $DB_NAME.sqlproj `
       /p:SQLDBExtensionsRefPath="C:\Microsoft.Data.Tools.Msbuild.10.0.61804.210\lib\net46" `
       /p:SqlServerRedistPath="C:\Microsoft.Data.Tools.Msbuild.10.0.61804.210\lib\net46"
 
-ENV sa_password="P@ssw0rd"
-ENV script_name="hydrate.sql"
 
-CMD ./Unpack-Database.ps1 -sqlpackage $env:SQLPACKAGE_PATH -hostname $env:hostname -sa_password $env:sa_password -db_name $env:db_name -script_name $env:script_name -Verbose
+CMD ./Unpack-Database.ps1 -sqlpackage $env:SQLPACKAGE_PATH -dacpac_path "C:\src\bin\Debug" `
+    -hostname $env:DB_HOST -port $env:PORT -sa_password $env:SA_PASSWORD -db_name $env:DB_NAME -Verbose
 
