@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mountain", "Mountain\Mountain.sqlproj", "{44697850-505C-49EE-90BC-1EEA9D2B1C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Woosh", "Woosh\Woosh.csproj", "{FC6119EE-68B2-4A75-8C67-CC9270C961DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Woosh", "Woosh\Woosh.csproj", "{C2EC15E0-48AE-4943-947B-77B9C83BAE09}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A89BA286-0D74-4357-90F2-934E0597FCBD}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FCCC3B19-24BD-4567-BDD1-D18E15762275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		{44697850-505C-49EE-90BC-1EEA9D2B1C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44697850-505C-49EE-90BC-1EEA9D2B1C61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44697850-505C-49EE-90BC-1EEA9D2B1C61}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{FC6119EE-68B2-4A75-8C67-CC9270C961DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC6119EE-68B2-4A75-8C67-CC9270C961DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC6119EE-68B2-4A75-8C67-CC9270C961DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC6119EE-68B2-4A75-8C67-CC9270C961DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A89BA286-0D74-4357-90F2-934E0597FCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A89BA286-0D74-4357-90F2-934E0597FCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A89BA286-0D74-4357-90F2-934E0597FCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A89BA286-0D74-4357-90F2-934E0597FCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EC15E0-48AE-4943-947B-77B9C83BAE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EC15E0-48AE-4943-947B-77B9C83BAE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EC15E0-48AE-4943-947B-77B9C83BAE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EC15E0-48AE-4943-947B-77B9C83BAE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCC3B19-24BD-4567-BDD1-D18E15762275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCC3B19-24BD-4567-BDD1-D18E15762275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCC3B19-24BD-4567-BDD1-D18E15762275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCC3B19-24BD-4567-BDD1-D18E15762275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

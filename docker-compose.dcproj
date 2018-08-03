@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>a89ba286-0d74-4357-90f2-934e0597fcbd</ProjectGuid>
+    <ProjectGuid>fccc3b19-24bd-4567-bdd1-d18e15762275</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>woosh</DockerServiceName>
