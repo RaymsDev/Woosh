@@ -57,5 +57,19 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Cave.sql" />
+    <Build Include="dbo\Tables\Dwarf.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore" />
+    <None Include="Initialize-Database.ps1" />
+    <None Include="Unpack-Database.ps1" />
+    <None Include="Dockerfile.builder" />
+    <None Include="docker-compose.yml" />
   </ItemGroup>
 </Project>

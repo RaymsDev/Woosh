@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    build: .
+    ports:
+      - 1433:1433
+    networks:
+      - deploy
+  builder:
+    build: 
+      context: .
+      dockerfile: Dockerfile.builder
+    links:
+        - db
+    environment:
+        DB_HOST: db
+    depends_on:
+      - db
+    networks:
+      - deploy
+networks:
+  deploy:
